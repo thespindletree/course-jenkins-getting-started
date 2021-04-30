@@ -1,7 +1,7 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
-
+    triggers { pollSCM('* * * * *') }
     stages {
         stage('Checkout') {
             steps {

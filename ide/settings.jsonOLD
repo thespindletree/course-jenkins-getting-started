@@ -1,0 +1,61 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "jenkins-runner.jobs": {
+        
+        "ide": {
+            "runWith": "pipelines-7080",
+            "name": "ide",
+            "isDefault": true
+        },
+        "test-1": {
+            "isDefault": true,
+            "runWith": "host-no-password",
+            "name": "pipeline-test",
+            "parameters": {
+                "first": 1,
+                "second": "2nd"
+            },
+            "environment": {
+                "HOST_NAME": "jenkins"
+            }
+        },
+        "test-2": {
+            "runWith": [
+                "host-with-password",
+                "host-prompt-for-password"
+            ],
+            "name": "pipeline-test"
+        },
+        "pipelines-7080": {
+            "url": "http://jenkins:7080",
+            "user": "admin",
+            "password": "admin",
+            "useCrumbIssuer": true
+        }
+    },
+    "jenkins-runner.hostConfigs": {
+
+
+        "host-with-password": {
+            "url": "http://jenkins:7080",
+            "user": "admin",
+            "password": "admin",
+            "useCrumbIssuer": false,
+            "rejectUnauthorizedCert": false
+        },
+        "host-prompt-for-password": {
+            "url": "http://jenkins:7080",
+            "user": "admin"
+        },
+        "host-no-password": {
+            "url": "http://jenkins:7080"
+        }
+    }
+}

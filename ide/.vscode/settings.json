@@ -6,7 +6,7 @@
       "isDefault": true
     }
   },
-  "jenkins-runner.hostConfigs": {
+  "jenkins-runner.hostConfigs": {  
     "pipelines-7080": {
       "url": "http://jenkins:7080",
       "user": "admin",
